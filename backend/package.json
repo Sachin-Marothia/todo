@@ -3,6 +3,17 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "mongoose": "^8.10.1"
-  }
+    "mongoose": "^8.12.1",
+    "todo-mern": "file:.."
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "mongo.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
