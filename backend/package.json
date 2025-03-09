@@ -12,6 +12,10 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "mongo.js",
+  "type": "module",
+  "engines": {
+    "node": "18.x"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

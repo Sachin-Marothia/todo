@@ -11,6 +11,7 @@ const Mid = () => {
   const [todoss,  settodoss] = useState([])
   const [showfinished, setshowfinished] = useState(false)
   const [refreshData, setRefreshData] = useState(false);
+  const BASE_URL = "https://todo-fullstack-rfey.onrender.com";
 
   // state for database
   const [mongotodo, setmongotodo] = useState([])
@@ -20,7 +21,7 @@ const Mid = () => {
   //fetch data from database
 
   useEffect(() => {
-    axios.get('http://localhost:5000/get/todos')
+    axios.get(`${BASE_URL}/get/todos`)
     .then(res=>setmongotodo(res.data))
     .catch(err => console.error(err));
     
@@ -28,7 +29,7 @@ const Mid = () => {
 
   //    add data to databse from input field 
   const handledata =async()=>{
-        let response = await axios.post('http://localhost:5000/api/todos',{name:todo});
+        let response = await axios.post(`${BASE_URL}/api/todos`, { name: todo });
         {console.log('data added',response)}
           settodo("")
         setRefreshData((prev)=>!prev)
@@ -40,7 +41,7 @@ const Mid = () => {
   // delete data from database 
   const handledelete =async(e,id)=>{
          
-    let response = await axios.delete(`http://localhost:5000/api/todos/${id}`)
+    let response = await axios.delete(`${BASE_URL}/api/todos/${id}`)
      setRefreshData((prev)=>!prev)
  }
 
